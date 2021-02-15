@@ -1,6 +1,6 @@
 //Calcular precio total: 
 
-const product = { count: 3, price: 12.55, type: "ropa"}
+const product = { count: 4, price: 12.55, type: "maquillaje"}
 const product1 = { count: 2, price: 15.87, type: "alimentacion"}
 const product2 = { count: 1, price: 19.95, type: "libro"}
 
@@ -48,7 +48,9 @@ switch( product.type){
         precioIva = precioTotalSinIva + (precioTotalSinIva*0.04);
         console.log("El precio total de los libros con Iva incluido es: " + precioIva);
     break;
-
+    default:
+        precioIva = precioTotalSinIva + (precioTotalSinIva*0.21);
+        console.log("El precio total del producto con Iva incluido es: " + precioIva);
 }
 
 
@@ -65,5 +67,8 @@ switch( product1.type){
         precioIva = precioTotalSinIva + (precioTotalSinIva*0.04);
         console.log("El precio total de los libros con Iva incluido es: " + precioIva);
     break;
+    default:
+        precioIva = precioTotalSinIva + (precioTotalSinIva*0.21);
+        console.log("El precio total del producto con Iva incluido es: " + precioIva);
 
 }

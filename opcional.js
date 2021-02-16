@@ -8,7 +8,6 @@ var sueldoNeto;
 var sueldoBruto = empleado.bruto;
 
 var hijo = empleado.hijos >= 1 ? 0.02 : 0;
-console.log(hijo);
 
 
 if (sueldoBruto > 0 && sueldoBruto < 12000) {

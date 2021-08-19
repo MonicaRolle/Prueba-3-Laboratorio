@@ -1,28 +1,40 @@
 const empleado = {
     bruto: 14500,
     hijos: 2,
-    pagas: 14
+    pagas: 14,
+};
+
+var salarioNeto;
+
+function hijos() {
+    switch (empleado.hijos) {
+        case 0:
+            return 0;
+        default:
+            return 0.02;
+    }
 }
 
-var sueldoNeto;
-var sueldoBruto = empleado.bruto;
-
-var hijo = empleado.hijos >= 1 ? 0.02 : 0;
-
-
-if (sueldoBruto > 0 && sueldoBruto < 12000) {
-    sueldoNeto = sueldoBruto;
-    console.log("El salario neto anual es: " + sueldoNeto + " €");
-} else if (sueldoBruto > 12000 && sueldoBruto < 24000) {
-    sueldoNeto = sueldoBruto - (sueldoBruto * (0.08 - hijo));
-    console.log("El salario neto anual es: " + sueldoNeto + " €");
-} else if (sueldoBruto > 24000 && sueldoBruto < 34000) {
-    sueldoNeto = sueldoBruto - (sueldoBruo * (0.16 - hijo));
-    console.log("El salario neto anual es: " + sueldoNeto + " €");
-} else if (sueldoBruto > 34000) {
-    sueldoNeto = sueldoBruto - (sueldoBruto * (0.3 - hijo));
-    console.log("El salario neto anual es: " + sueldoNeto + " €");
+function salario() {
+    if (empleado.bruto < 12000) {
+        return empleado.bruto
+    } else if (empleado.bruto >= 12000 && empleado.bruto < 24000) {
+        return salarioNeto = empleado.bruto - (empleado.bruto * (0.08 - hijos()));
+    } else if (empleado.bruto >= 24000 && empleado.bruto < 34000) {
+        return salarioNeto = empleado.bruto - (empleado.bruto * (0.16 - hijos()))
+    } else {
+        return salarioNeto = empleado.bruto - (empleado.bruto * (0.30 - hijos()))
+    }
 }
 
-var sueldoNetoMensual = sueldoNeto / empleado.pagas;
-console.log("El salario neto anual es: " + sueldoNetoMensual + " €")
+function salarioMensual() {
+    switch (empleado.pagas) {
+        case 12:
+            return salario() / 12;
+        case 14:
+            return salario() / 14;
+    }
+}
+
+console.log("El salario neto anual es: ", salario(empleado), "€");
+console.log("El salario neto mensual es: ", salarioMensual(empleado), "€");

@@ -14,7 +14,6 @@ function getTotalVat(product) {
 
 //Calcular el IVA (21%, alimentación 10%, libro 4%)
 
-
 function getVat() {
     switch (product.type) {
         case "alimentación":
